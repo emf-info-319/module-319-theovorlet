@@ -10,12 +10,7 @@ public class Excercice02 {
         byte myNumOne = 127;
         System.out.println(myNumOne);
 
-        if (myNumOne == 20) {
-
-            System.out.println("Hello");
-           
-            
-        }
+    
 
 
 
