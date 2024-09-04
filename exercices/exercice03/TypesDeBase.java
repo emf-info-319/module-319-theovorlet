@@ -7,6 +7,7 @@ public class TypesDeBase {
 
         System.out.println("je m'appelle " + nom + " j'ai " + age);
         System.out.println("dans dix en j'aurai " + agePlusDix);
+        //teste
 
     }
 
