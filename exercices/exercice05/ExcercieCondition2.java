@@ -10,10 +10,6 @@ public class ExcercieCondition2 {
         System.out.println("Le résultat est positif");
     }
 
-
-
-
-
 }
     
 }
