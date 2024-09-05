@@ -1,3 +1,5 @@
+package exercices.exercice03;
+
 public class TypesDeBase {
 
     public static void main(String[] args) {
@@ -7,7 +9,7 @@ public class TypesDeBase {
 
         System.out.println("je m'appelle " + nom + " j'ai " + age);
         System.out.println("dans dix en j'aurai " + agePlusDix);
-        //teste
+        
 
     }
 
