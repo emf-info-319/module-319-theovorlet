@@ -17,7 +17,10 @@ public class devoir02 {
        
         int remplissage = random.nextInt(Capacite_Resevoir_B + Capacite_Resevoir_A) + 0;
         //nombre aléatoire 
-        System.out.println(remplissage);
+        System.out.println("il y a " + remplissage + " à remplir.");
+
+        
+
         
 
 
