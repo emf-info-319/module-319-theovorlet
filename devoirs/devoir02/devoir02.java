@@ -4,30 +4,48 @@ import java.util.Random;
 import java.util.random.RandomGenerator;
 
 public class devoir02 {
-    public static void main(String[] args) {
+
+    public final static int RESERVOIRE_RESERVOIRE_A = 3;
+    public final static int RESERVOIRE_RESERVOIRE_B = 5; 
+    public static void main( String[] args ) {
         
-       final int Capacite_Resevoir_A = 3;
-       final int Capacite_Resevoir_B = 5;
-       Random random = new Random();
+        int reservoireA = 0;
+        int reservoireB = 0;
+        int remplissage;
+        remplissage = ( int ) ( Math.random() * ( RESERVOIRE_RESERVOIRE_B - RESERVOIRE_RESERVOIRE_A  + 1 ) ) + RESERVOIRE_RESERVOIRE_A;
+        System.out.println("il y a " + remplissage + " litre à remplir. ");
         
-       
-        int reservoirA;
-        int reservoirB;
-       
-       
-        int remplissage = random.nextInt(Capacite_Resevoir_B + Capacite_Resevoir_A) + 0;
-        //nombre aléatoire 
-        int CapaciteTotal = Capacite_Resevoir_A + Capacite_Resevoir_B ;
-        System.out.println("il y a " + remplissage + " à remplir.");
+        boolean reservoireAVide = true ;
+        Boolean reservoireAPlein= true ;
+        do{
+            System.out.println("Remplissage du réservoir A...");
+           remplissage= remplissage - 1;
+            reservoireA= reservoireA + 1;
+            //enlève un a remplissage et le met dans le réservoire A
+            if (reservoireA == RESERVOIRE_RESERVOIRE_A) {
+                reservoireAVide = false ;
+                //si le reservoir a ET REMPLIT AU MÊME NIVEAU QUE SA CAPACITé MAX LE RéSERVOIRE VIDE NE LE SERA PLUS 
+            }
+            System.out.println("Le reservoir A : " + reservoireA + " le réservoir B : " + reservoireB);
+            
+            if (reservoireAVide== false ) {
+                do{
+                    System.out.println("Remplissage du réservoir B..."); 
+                    remplissage= remplissage - 1;
+                    reservoireB= reservoireB + 1;
+                    System.out.println("Le reservoir A : " + reservoireA + " le réservoir B : " + reservoireB);
+                    if (remplissage == 0) {
+                        reservoireAPlein = false; 
+                    }
+                } while(reservoireAPlein==true);
 
+            }
+            
+        } while (reservoireAPlein==true);  
+
+     
         
 
-        
-
-        
-
-
-
-    }
-    
+     }
+     
 }
