@@ -9,7 +9,7 @@ public class devoir02 {
        final int Capacite_Resevoir_A = 3;
        final int Capacite_Resevoir_B = 5;
        Random random = new Random();
-
+        
        
         int reservoirA;
         int reservoirB;
@@ -17,7 +17,10 @@ public class devoir02 {
        
         int remplissage = random.nextInt(Capacite_Resevoir_B + Capacite_Resevoir_A) + 0;
         //nombre aléatoire 
+        int CapaciteTotal = Capacite_Resevoir_A + Capacite_Resevoir_B ;
         System.out.println("il y a " + remplissage + " à remplir.");
+
+        
 
         
 
