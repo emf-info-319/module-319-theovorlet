@@ -28,8 +28,9 @@ public class devoir02 {
             }
             System.out.println("Le reservoir A : " + reservoireA + " le réservoir B : " + reservoireB);
             
-            if (reservoireAVide== false ) {
+            if (reservoireAVide== false & remplissage != 0 ) {
                 do{
+                    
                     System.out.println("Remplissage du réservoir B..."); 
                     remplissage= remplissage - 1;
                     reservoireB= reservoireB + 1;
