@@ -12,12 +12,15 @@ public class devoir02 {
         int reservoireA = 0;
         int reservoireB = 0;
         int remplissage;
-        remplissage = ( int ) ( Math.random() * ( RESERVOIRE_RESERVOIRE_B - RESERVOIRE_RESERVOIRE_A  + 1 ) ) + RESERVOIRE_RESERVOIRE_A;
+        remplissage = ( int ) ( Math.random() * ( RESERVOIRE_RESERVOIRE_B+RESERVOIRE_RESERVOIRE_A - 0  + 1 ) ) + 0;
         System.out.println("il y a " + remplissage + " litre à remplir. ");
         
         boolean reservoireAVide = true ;
         Boolean reservoireAPlein= true ;
-        do{
+        if(remplissage==0){reservoireAPlein= false;}
+        while (reservoireAPlein == true) 
+            
+        {
             System.out.println("Remplissage du réservoir A...");
            remplissage= remplissage - 1;
             reservoireA= reservoireA + 1;
@@ -27,7 +30,7 @@ public class devoir02 {
                 //si le reservoir a ET REMPLIT AU MÊME NIVEAU QUE SA CAPACITé MAX LE RéSERVOIRE VIDE NE LE SERA PLUS 
             }
             System.out.println("Le reservoir A : " + reservoireA + " le réservoir B : " + reservoireB);
-            
+            if(remplissage==0){reservoireAPlein= false;}
             if (reservoireAVide== false & remplissage != 0 ) {
                 do{
                     
@@ -39,10 +42,10 @@ public class devoir02 {
                         reservoireAPlein = false; 
                     }
                 } while(reservoireAPlein==true);
-
+                
             }
             
-        } while (reservoireAPlein==true);  
+        }  
 
      
         
