@@ -7,13 +7,18 @@ public class projetPerso{
     public static void main(String[] args) {
 
         JFrame frame = new JFrame("Windows");
+        //créer la fenêtre + le nom
         frame.setSize(800, 700);
+        //la taille de la fenêtre
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //le moyen de la fermer
         JTextArea textArea = new JTextArea("teste sur fenêtre");
-        textArea.setLocale(100,200);
-        textArea.setBounds(200, 500, 100, 100);
+        //du texte
         frame.add(textArea);
+        //ajoute la zone de texte
         frame.setVisible(true); 
+        //rend la fenêtre  visible
+        
         
         
 
