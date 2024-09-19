@@ -18,19 +18,19 @@ public class devoir02 {
         boolean reservoireAVide = true ;
         Boolean reservoireAPlein= true ;
         if(remplissage==0){reservoireAPlein= false;}
-        while (reservoireAPlein == true) 
-            
-        {
+
+        while (reservoireAPlein == true){
             System.out.println("Remplissage du réservoir A...");
            remplissage= remplissage - 1;
             reservoireA= reservoireA + 1;
-            //enlève un a remplissage et le met dans le réservoire A
+
             if (reservoireA == RESERVOIRE_RESERVOIRE_A) {
                 reservoireAVide = false ;
-                //si le reservoir a ET REMPLIT AU MÊME NIVEAU QUE SA CAPACITé MAX LE RéSERVOIRE VIDE NE LE SERA PLUS 
             }
             System.out.println("Le reservoir A : " + reservoireA + " le réservoir B : " + reservoireB);
+
             if(remplissage==0){reservoireAPlein= false;}
+
             if (reservoireAVide== false & remplissage != 0 ) {
                 do{
                     
@@ -46,10 +46,6 @@ public class devoir02 {
             }
             
         }  
-
-     
-        
-
      }
      
 }
