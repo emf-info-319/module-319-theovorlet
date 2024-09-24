@@ -4,27 +4,48 @@ import java.util.Random;
 import java.util.random.RandomGenerator;
 
 public class devoir02 {
-    public static void main(String[] args) {
+
+    public final static int RESERVOIRE_RESERVOIRE_A = 3;
+    public final static int RESERVOIRE_RESERVOIRE_B = 5; 
+    public static void main( String[] args ) {
         
-       final int Capacite_Resevoir_A = 3;
-       final int Capacite_Resevoir_B = 5;
-       Random random = new Random();
-
-       
-        int reservoirA;
-        int reservoirB;
-       
-       
-        int remplissage = random.nextInt(Capacite_Resevoir_B + Capacite_Resevoir_A) + 0;
-        //nombre aléatoire 
-        System.out.println("il y a " + remplissage + " à remplir.");
-
+        int reservoireA = 0;
+        int reservoireB = 0;
+        int remplissage;
+        remplissage = ( int ) ( Math.random() * ( RESERVOIRE_RESERVOIRE_B+RESERVOIRE_RESERVOIRE_A - 0  + 1 ) ) + 0;
+        System.out.println("il y a " + remplissage + " litre à remplir. ");
         
+        boolean reservoireAVide = true ;
+        Boolean reservoireAPlein= true ;
+        if(remplissage==0){reservoireAPlein= false;}
 
-        
+        while (reservoireAPlein == true){
+            System.out.println("Remplissage du réservoir A...");
+           remplissage= remplissage - 1;
+            reservoireA= reservoireA + 1;
 
+            if (reservoireA == RESERVOIRE_RESERVOIRE_A) {
+                reservoireAVide = false ;
+            }
+            System.out.println("Le reservoir A : " + reservoireA + " le réservoir B : " + reservoireB);
 
+            if(remplissage==0){reservoireAPlein= false;}
 
-    }
-    
+            if (reservoireAVide== false & remplissage != 0 ) {
+                do{
+                    
+                    System.out.println("Remplissage du réservoir B..."); 
+                    remplissage= remplissage - 1;
+                    reservoireB= reservoireB + 1;
+                    System.out.println("Le reservoir A : " + reservoireA + " le réservoir B : " + reservoireB);
+                    if (remplissage == 0) {
+                        reservoireAPlein = false; 
+                    }
+                } while(reservoireAPlein==true);
+                
+            }
+            
+        }  
+     }
+     
 }
