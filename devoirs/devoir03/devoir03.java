@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 public class devoir03 {
     public static void main(String[] args) 
     {
@@ -34,16 +33,3 @@ public class devoir03 {
         System.out.println("nous sommes le jours : " + nbJour);
     }
 }
-=======
-package devoirs.devoir03;
-
-public class devoir03 {
-    public static void main(String[] args) {
-        int jour =18;
-        int mois = 9;
-        int annee = 2024;
-        
-
-    }
-}
->>>>>>> 1cd3dc5c4d2331722efecabd0acba27f14549f39
