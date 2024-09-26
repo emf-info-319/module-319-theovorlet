@@ -3,7 +3,7 @@ package exercices.exercice09;
 public class nombresDeSurvivants {
     public static void main(String[] args) {
         int [] nombreSuivant = new int[5];
-        int nombreDeBase = 27;
+        int nombreDeBase = 17;
         int caseDuTableau=0;
         while (caseDuTableau!=5) {
             nombreDeBase++;

@@ -17,6 +17,7 @@ public class devoir03 {
             {
                 nbJour += 29;
             }
+           
             else if (i == 2 && (annee % 4) != 0)
             {
                 nbJour += 28;
@@ -29,7 +30,8 @@ public class devoir03 {
             {
                 nbJour += 30;
             }
+           
         }
-        System.out.println("nous sommes le jours : " + nbJour);
+        System.out.println("Le " + jour + "/" + mois + "/" + annee + " est le jour "  + nbJour+ " de l'An.");
     }
 }
