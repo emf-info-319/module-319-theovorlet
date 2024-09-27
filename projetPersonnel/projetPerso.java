@@ -15,8 +15,11 @@ public class projetPerso{
         //du texte
         frame.setLayout(null); //renommer "frame" car ce n'est pas "Windows"
         //découpe la fenêtre en plusieurs parti
-        textArea.setLocation(100, 100);
-        textArea.setSize(800, 700); // Définir la taille du JTextArea       
+        int x = (tailleEcran.width - frame.getSize().width) / 2;
+        int y = (tailleEcran.height - frame.getSize().height) / 2;
+
+        textArea.setLocation(x,y);
+        textArea.setSize(100, 10); // Définir la taille du JTextArea       
 
         frame.add(textArea);
         //ajoute la zone de texte
