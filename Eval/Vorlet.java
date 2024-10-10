@@ -5,7 +5,7 @@ public class Vorlet {
     public final static int NOTE_MAX = 6;
     public final static int NBRE_NOTES = 5;
         public static void main(String[] args) {
-        int totalNote=0;
+        float totalNote=0;
         float moyenne;
         int[] notesObtenues = new int[NBRE_NOTES];
         for(int i = 0; i<NBRE_NOTES;i++){

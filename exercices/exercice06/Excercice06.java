@@ -38,8 +38,6 @@ public class Excercice06 {
             case 6:
             System.out.println("travaille non rendu");
                 break;
-        
-
             default:
                 break;
         }
