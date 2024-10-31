@@ -1,7 +1,5 @@
 import java.util.Scanner;
-public int calcul(){
-        
-}
+
 public class binaire {
   
 
@@ -9,6 +7,15 @@ public class binaire {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Veuillez entrer un nombre décimal : ");
         int nombreDecimal = scanner.nextInt();
+        scanner.nextLine();
+        if (nombreDecimal==0) {
+            System.out.println(0);
+        }
+        int nombreBinaire;
+        while (nombreDecimal>0) {
+            
+        }
+        System.out.println(nombreDecimal);
         scanner.close();
     }
 }
