@@ -2,11 +2,11 @@ package devoirs.devoir01;
 
 public class Devoir01 {
     public static void main(String[] args) {
-        int monAge =45 ;
-        boolean estMajeur; 
-        
+        int monAge = 45;
+        boolean estMajeur;
+
         if (monAge > 20) {
-            estMajeur = true; 
+            estMajeur = true;
         } else {
             estMajeur = false;
         }
