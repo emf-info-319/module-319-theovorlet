@@ -21,9 +21,10 @@ public class ExcercicesMethodesTableaux {
         int valeurMinDuTableau = valeurMinTableau(monTableauRemplieAleatoir);
         int valeurMaxDuTableau = valeurMaxTableau(monTableauRemplieAleatoir);
         int nombreDAppartionDUneValeur = nbrDApparitionDUneValeur(monTableauRemplieAleatoir, VALEURATROUVER);
-       
+
         int[] remplacementDeValeur = remplacementValeurTableau(monTableau, VALEURACHERCHER, VALEURQUIREMPLACE);
-        System.out.println("Après remplacement de la valeur " + VALEURACHERCHER + " par la valeur " + VALEURQUIREMPLACE + " voici le contenu du tableau : ");
+        System.out.println("Après remplacement de la valeur " + VALEURACHERCHER + " par la valeur " + VALEURQUIREMPLACE
+                + " voici le contenu du tableau : ");
         afficherContenuTableau(monTableau);
         int sommeValeurDuTableau = sommeValeurTableau(monTableau);
         double moyenneTableau = moyenneValeurTableau(monTableau);
@@ -100,7 +101,7 @@ public class ExcercicesMethodesTableaux {
         for (int o = 0; o < tableauAAditionner.length; o++) {
             somme += tableauAAditionner[o];
         }
-        System.out.println("La somme des cellules du tableau = "+somme);
+        System.out.println("La somme des cellules du tableau = " + somme);
         return somme;
     }
 
@@ -110,7 +111,7 @@ public class ExcercicesMethodesTableaux {
             moyenne += tableauAFaireMoyen[p];
         }
         moyenne /= tableauAFaireMoyen.length;
-        System.out.println("La moyenne des cellules du tableau = "+moyenne);
+        System.out.println("La moyenne des cellules du tableau = " + moyenne);
         return moyenne;
     }
 
@@ -127,23 +128,23 @@ public class ExcercicesMethodesTableaux {
     public static int premierEmplacementValeur(int[] tableauEmplacementValeur, int valeurEmplacement) {
         for (int r = 0; r < tableauEmplacementValeur.length; r++) {
             if (tableauEmplacementValeur[r] == valeurEmplacement) {
-                System.out.println("La valeur  " + valeurEmplacement +  " a été trouvée à la 1ère position N" +r);
+                System.out.println("La valeur  " + valeurEmplacement + " a été trouvée à la 1ère position N" + r);
                 return r;
             }
 
         }
-        System.out.println("La valeur  " + valeurEmplacement +  " a été trouvée à la 1ère position N-1");
+        System.out.println("La valeur  " + valeurEmplacement + " a été trouvée à la 1ère position N-1");
         return -1;
     }
 
     public static int dernierEmplacementValeur(int[] tableauDerniereValeur, int derniereValeur) {
         for (int s = tableauDerniereValeur.length - 1; s >= 0; s--) {
             if (tableauDerniereValeur[s] == derniereValeur) {
-                System.out.println("La valeur  " + derniereValeur +  " a été trouvée à la dernière position N"+ s);
+                System.out.println("La valeur  " + derniereValeur + " a été trouvée à la dernière position N" + s);
                 return s;
             }
         }
-        System.out.println("La valeur  " + derniereValeur +  " a été trouvée à la dernière position N-1");
+        System.out.println("La valeur  " + derniereValeur + " a été trouvée à la dernière position N-1");
         return -1;
 
     }
