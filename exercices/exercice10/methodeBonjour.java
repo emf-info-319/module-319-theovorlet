@@ -11,7 +11,6 @@ public class methodeBonjour {
         System.out.println(Math.pow(2, 3));// va élever le premier nombre à la puissance du premier
         System.out.println(Math.sqrt(16));// va calculer la racine carré d'un nombre
         System.out.println(Math.abs(-23));// va retourner la valeur absolu (distance en le nombre et 0)
-
     }
 
     public static void direBonjour() {

@@ -15,7 +15,7 @@ public class ExcercicesMethodesTableaux {
 
         int[] monTableau = creationTableaux(TAILLEDUTABLEAU);
         int[] monTableauRemplieFixe = remplissageFixeDuTableau(monTableau, VALEURVOULU);
-        int[] monTableauRemplieAleatoir = remplissageAleatoirDuTableau(monTableau);
+        int[] monTableauRemplieAleatoir = remplissageAleatoirDuTableau(monTableau, MAX);
         int maTailleDuTableauTrouver = DeterminationDeLaTailleTableau(monTableau);
         afficherContenuTableau(monTableau);
         int valeurMinDuTableau = valeurMinTableau(monTableauRemplieAleatoir);
@@ -44,9 +44,9 @@ public class ExcercicesMethodesTableaux {
         return tableauARemplir;
     }
 
-    public static int[] remplissageAleatoirDuTableau(int[] tableauARemplirAleatoir) {
+    public static int[] remplissageAleatoirDuTableau(int[] tableauARemplirAleatoir, int max) {
         for (int j = 0; j < tableauARemplirAleatoir.length; j++) {
-            tableauARemplirAleatoir[j] = (int) (Math.random() * (MAX - MIN + 1)) + MIN;
+            tableauARemplirAleatoir[j] = (int) (Math.random() * (max - MIN + 1)) + MIN;
         }
         return tableauARemplirAleatoir;
     }
@@ -65,7 +65,7 @@ public class ExcercicesMethodesTableaux {
     }
 
     public static int valeurMinTableau(int[] minTableau) {
-        int minimumTrouver = 100000000;
+        int minimumTrouver = minTableau[0];
         for (int l = 1; l < minTableau.length; l++) {
             if (minTableau[l] < minimumTrouver) {
                 minimumTrouver = minTableau[l];
@@ -76,7 +76,7 @@ public class ExcercicesMethodesTableaux {
     }
 
     public static int valeurMaxTableau(int[] maxTableau) {
-        int maximumTrouver = 0;
+        int maximumTrouver = maxTableau[0];
         for (int m = 1; m < maxTableau.length; m++) {
             if (maxTableau[m] > maximumTrouver) {
                 maximumTrouver = maxTableau[m];
@@ -121,32 +121,31 @@ public class ExcercicesMethodesTableaux {
                 tableauAModifier[q] = valeurQuiRemplace;
             }
         }
-
         return tableauAModifier;
     }
 
     public static int premierEmplacementValeur(int[] tableauEmplacementValeur, int valeurEmplacement) {
+        int premierApparition = -1;
         for (int r = 0; r < tableauEmplacementValeur.length; r++) {
             if (tableauEmplacementValeur[r] == valeurEmplacement) {
-                System.out.println("La valeur  " + valeurEmplacement + " a été trouvée à la 1ère position N" + r);
-                return r;
+                break;
             }
-
         }
-        System.out.println("La valeur  " + valeurEmplacement + " a été trouvée à la 1ère position N-1");
-        return -1;
+        System.out
+                .println("La valeur  " + valeurEmplacement + " a été trouvée à la 1ère position N" + premierApparition);
+        return premierApparition;
     }
 
     public static int dernierEmplacementValeur(int[] tableauDerniereValeur, int derniereValeur) {
+        int derniereApparition = -1;
         for (int s = tableauDerniereValeur.length - 1; s >= 0; s--) {
             if (tableauDerniereValeur[s] == derniereValeur) {
-                System.out.println("La valeur  " + derniereValeur + " a été trouvée à la dernière position N" + s);
-                return s;
+
+                break;
             }
         }
-        System.out.println("La valeur  " + derniereValeur + " a été trouvée à la dernière position N-1");
-        return -1;
-
+        System.out.println("La valeur  " + derniereValeur + " a été trouvée à la dernière position N" +derniereApparition );
+        return derniereApparition;
     }
 
 }
