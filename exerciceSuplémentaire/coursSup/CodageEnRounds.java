@@ -1,3 +1,4 @@
+package exerciceSuplémentaire.coursSup;
 public class CodageEnRounds {
 
     public static double PI = 3.14;

@@ -59,7 +59,6 @@ public class Devoir06 {
             }
         }
         return position;
-
     }
 
 }

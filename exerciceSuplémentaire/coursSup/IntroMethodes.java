@@ -1,3 +1,4 @@
+package coursSup;
 import java.util.Scanner;
 
 public class IntroMethodes {
