@@ -17,20 +17,16 @@ public class Livret {
 
     public static String[] construireTableMultiplication(int chiffreUn, int chiffreDeux) {
         String[] tableauValeurLitteral = new String[chiffreUn * chiffreDeux];
-        int facteurUn;
-        int facteurDeux;
         int resultat;
         String resultetEnSting;
         int i = 0;
         for (int j = 1; j <= chiffreUn; j++) {
-            facteurUn = j;
             for (int k = 1; k <= chiffreDeux; k++) {
-                facteurDeux = k;
-                resultat = facteurUn * facteurDeux;
+                resultat = j * k;
                 resultetEnSting = String.valueOf(resultat);
                 tableauValeurLitteral[i] = resultetEnSting;
                 i++;
-                System.out.println(" " + facteurUn + " x " + facteurDeux + " = " + resultat);
+                System.out.println(" " + j + " x " + k + " = " + resultat);
             }
         }
         return tableauValeurLitteral;
