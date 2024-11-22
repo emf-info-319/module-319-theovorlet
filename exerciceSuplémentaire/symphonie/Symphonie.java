@@ -25,15 +25,7 @@ public class Symphonie {
     }
 
     public static final String creerLaPartition(int nombreDeNotePartition) {
-        System.out.println("La partition est : ");
-        for (int i = 0; i < NBRE_NOTES; i++) {
-            if (estDiese() == true) {
-                System.out.println(NOTES[choisirUnNombre(1, 7)] + "# ");
-            } else {
-            }
-            System.out.println(NOTES[choisirUnNombre(1, 7)] + " ");
-        }
-        return p;
+       
     }
 
 }
