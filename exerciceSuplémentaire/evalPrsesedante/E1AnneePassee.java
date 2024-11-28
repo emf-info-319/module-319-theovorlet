@@ -9,22 +9,25 @@ public class E1AnneePassee {
   public static void main(String[] args) {
     pointsEquipe = new int[EQUIPES.length];
     for (int i = 0; i < EQUIPES.length; i++) {
-      if (i == EQUIPES.length - 1) {
-        simuleMatch(i, 0);
-      } else {
-        simuleMatch(i, i++);
+      for (int j = i + 1; j < EQUIPES.length; j++) {
+        simuleMatch(i, j);
       }
     }
+
     System.out.println("-----------------------------");
+
     for (int j = 0; j < EQUIPES.length; j++) {
       System.out.println("L'équipe " + EQUIPES[j] + " a " + pointsEquipe[j] + " points");
+
     }
+
     System.out.println("-----------------------------");
     int[] gagnants = trouveGagnants();
 
     for (int i = 0; i < gagnants.length; i++) {
-
+      System.out.println("L'équipe " + EQUIPES[gagnants[i]] + " a gagné.");
     }
+
   }
 
   public static void simuleMatch(int index1, int index2) {
@@ -37,20 +40,40 @@ public class E1AnneePassee {
       pointsEquipe[index2] += 3;
       System.out.println("L'équipe " + EQUIPES[index2] + " a gagné contre l'équipe " + EQUIPES[index1]);
     } else {
-      pointsEquipe[1] += 1;
-      pointsEquipe[2] += 1;
+      pointsEquipe[index1] += 1;
+      pointsEquipe[index2] += 1;
       System.out.println("Match nul entre " + EQUIPES[index1] + " et " + EQUIPES[index2]);
     }
   }
-  public static int rechercheMaxPts(){
-    int maximumTrouver = pointsEquipe[0];
-    for (int m = 1; m < maxTableau.length; m++) {
-        if (maxTableau[m] > maximumTrouver) {
-            maximumTrouver = maxTableau[m];
-        }
-    }
-    System.out.println("la valeur max trouvée = " + maximumTrouver);
-    return maximumTrouver;
 
+  public static int rechercheMaxPts() {
+    int maxPts = 0;
+    for (int i = 0; i < EQUIPES.length; i++) {
+      if (pointsEquipe[i] > maxPts) {
+        maxPts = pointsEquipe[i];
+      }
+    }
+
+    return maxPts;
+
+  }
+
+  public static int[] trouveGagnants() {
+    int[] equipeGagnante;
+    int maxPts = rechercheMaxPts();
+    int compteurDesGagnants = 0;
+    for (int i = 0; i < EQUIPES.length; i++) {
+      if (pointsEquipe[i] == maxPts) {
+        compteurDesGagnants++;
+      }
+    }
+    int compteur = 0;
+    equipeGagnante = new int[compteurDesGagnants];
+    for (int i = 0; i < EQUIPES.length; i++) {
+      if (pointsEquipe[i] == maxPts) {
+        equipeGagnante[compteur++] = i;
+      }
+    }
+    return equipeGagnante;
   }
 }
