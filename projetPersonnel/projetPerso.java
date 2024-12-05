@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JTextArea;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.Scanner;
 
 public class projetPerso {
     public static void main(String[] args) {
