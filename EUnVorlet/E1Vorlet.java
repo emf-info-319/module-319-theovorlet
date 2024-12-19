@@ -16,7 +16,7 @@ public class E1Vorlet {
         System.out.println("*         'Shut The Box'         *");
         System.out.println("**********************************");
         for (int i = 0; i < tuiles.length; i++) {
-            tuiles[i] = 1;
+            tuiles[i] = (i+1);
         }
         while (enJeu) {
             afficheTuiles(tuiles);
@@ -24,7 +24,7 @@ public class E1Vorlet {
             System.out.println("Donnez le(s) nombre(s) à enlever :");
             tuiles = enleveTuiles(tuiles, totalDes);
             boolean encore = contientEncoreDesTuilesABaisser(tuiles);
-            if (encore == false) {
+            if (!encore) {
                 System.out.println(" Jeu terminé ");
                 SCANNER.close();
                 enJeu = false;
@@ -33,17 +33,20 @@ public class E1Vorlet {
     }
 
     public static void afficheTuiles(int[] tableauAAfficher) {
-        for (int j = 1; j < tableauAAfficher.length; j++) {
-            System.out.print("|");
+        System.out.print("|");
+        for (int j = 0; j < tableauAAfficher.length; j++) {
             if (tableauAAfficher[j] == 0) {
                 System.out.print("__|");
                 continue;
             }
             tableauAAfficher[j] = j;
-            if (tableauAAfficher[j] < 10) {
-                System.out.print("0|" + tableauAAfficher[j]);
-            } else {
-                System.out.print(+tableauAAfficher[j] + "|");
+            if (tableauAAfficher[j]==tableauAAfficher.length-1) {
+               System.out.println(tableauAAfficher.length+"|");
+            } else if (tableauAAfficher[j] < 10) {
+                System.out.print("0" + (tableauAAfficher[j]+1)+"|");
+            }   
+            else{
+                System.out.print((tableauAAfficher[j]+1) + "|");
             }
 
         }
@@ -65,7 +68,7 @@ public class E1Vorlet {
 
         do {
             int valeur = SCANNER.nextInt();
-            totalEnleve = valeur+totalEnleve;
+            totalEnleve += valeur;
             if (valeur == 0) {
                 System.out.println("Abandon...");
                 for (int l = 0; l < tuilesTemp.length; l++) {
@@ -75,10 +78,10 @@ public class E1Vorlet {
                 demandeEncore = false;
             } else if (valeur < 1 || valeur > tuilesTemp.length) {
                 System.out.println("Hors limites !");
-                totalEnleve += 0;
+                totalEnleve = 0;
             } else if (tuilesTemp[valeur - 1] == 0) {
                 System.out.println("Vous avez déjà baissé la tuile à la position " + valeur);
-                totalEnleve = valeur - totalEnleve;
+                totalEnleve -= valeur;
             } else {
                 if (totalEnleve < totalDes) {
                     tuilesTemp[valeur - 1] = 0;
@@ -86,7 +89,7 @@ public class E1Vorlet {
                 } else if (totalEnleve > totalDes) {
                     System.out.println("Le total est dépassez, choisissez d'autres nombres ");
                     tuilesTemp = copieTableau(tuiles);
-                    totalEnleve += 0;
+                    totalEnleve = 0;
                     afficheTuiles(tuiles);
                 } else {
                     tuilesTemp[valeur - 1] = 0;
@@ -108,12 +111,15 @@ public class E1Vorlet {
     }
 
     public static boolean contientEncoreDesTuilesABaisser(int[] tableauAVerifier) {
-            boolean contientUnChiffre = false;
-        for (int m = 0; m < tableauAVerifier.length; m++) {
-            if (tableauAVerifier[m] != 0) {
+        boolean contientUnChiffre = false;
+        //va traverser le tableau et si une valeur est différente de 0 va revoyé vrai 
+        for (int o = 0; o < tableauAVerifier.length; o++) {
+            if (tableauAVerifier[o] != 0) {
                 contientUnChiffre = true;
+                break;
             }
-            return contientUnChiffre;
+
         }
+        return contientUnChiffre;
     }
 }
